@@ -1,0 +1,95 @@
+<div class="banner">
+    <div class="d-inline-flex w-100">
+        <div>
+            <div style="float: left;">
+                <h4 class="my-auto" style="padding-top: 20px;"><b>Services</b></h4>
+            </div>
+            <div style="float: right;">
+                <div style="float: left">
+                    <!---->
+                    <mat-list>
+                     
+                    </mat-list>
+                    <!---->
+                </div>
+                <div style="float: right;padding-top: 13px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+        <mat-card style="
+          box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+            0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+          border-radius: 16px;">
+            <div style="display: flex;">
+                <mat-card class="card border-bottom-danger " style="flex: 1 1 auto;margin-left: 10px;margin-right: 10px;">
+                    <div class="p-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <a routerLink="/bookingService" routerLinkActive="active">
+                            <div class="col-4 font-size-20">
+                                <div style="padding-left: 40%;cursor: pointer;"> <mat-icon>calendar_today</mat-icon></div>
+                                <div style="padding-left: 37%;"><h6 style="font-size: 15px !important">Booking</h6></div>  
+                            </div>
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="card border-bottom-danger " style="flex: 1 1 auto;margin-left: 10px;margin-right: 10px;">
+                    <div class="p-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <a routerLink="/upcommingBooking" routerLinkActive="active">
+                            <div class="col-4 font-size-20">
+                                <div style="padding-left: 40%;cursor: pointer;"> <mat-icon>calendar_today</mat-icon></div>
+                                <div style="padding-left: 37%;"><h6 style="font-size: 15px !important">upcomming Booking</h6></div>  
+                            </div>
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="card border-bottom-danger " *ngIf="flagRole" style="flex: 1 1 auto;margin-left: 10px;margin-right: 10px;">
+                    <div class="p-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <a routerLink="/employeeDetails" routerLinkActive="active">
+                          <div class="col-4 font-size-20">
+                            <div style="padding-left: 40%;cursor: pointer;"> <mat-icon>perm_identity</mat-icon></div>
+                            <div style="padding-left: 36%;"><h6 style="font-size: 15px !important">Employee</h6></div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card>
+
+                  <mat-card class="card border-bottom-danger " style="flex: 1 1 auto;margin-left: 10px;margin-right: 10px;">
+                    <div class="p-2">
+                      <div class="row">
+                        <div class="col-12">
+                          <a routerLink="/locationOnOff"  routerLinkActive="active">
+                          <div class="col-4 font-size-20">
+                            <div style="padding-left: 40%;cursor: pointer;"> <mat-icon>location_on</mat-icon></div>
+                          <div style="padding-left: 32%;"><h6 style="font-size: 15px !important">Location on/off</h6></div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+                    </div>
+                  </mat-card>
+
+
+            </div>
+        </mat-card>
+    </div>
+</div>

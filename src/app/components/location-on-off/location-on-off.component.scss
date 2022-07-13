@@ -1,0 +1,198 @@
+body {
+    font-family: 'Trebuchet MS', 'Trebuchet MS', 'Trebuchet MS', 'Trebuchet MS', Arial, sans-serif !important;
+  }
+  
+  .banner {
+    padding-top: 10px;
+    padding-bottom: 100px;
+    padding-left: 10px;
+    background-color: var(--danger);
+    color: #fff;
+  }
+  
+  #reset {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+  }
+  
+  .my-auto{
+    padding-left: 10px !important;
+  }
+
+  #mainDiv{
+align-items: center;
+border: none;
+
+  }
+  
+  .example-container {
+    display: block !important;
+    flex-direction: column;
+     min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .example-margin1{
+    margin-right: 10px !important;
+  }
+  .example-full-width{
+    margin-right: 10px;
+  }
+  
+  #dateTimePicker{
+    float: right;
+  }
+  
+  
+  table {
+    width: 100%;
+  }
+  
+  
+  #searchbocDiv{
+    border-radius: 25px;
+    background-color: white !important;
+    align-content: center;
+  }
+  
+  
+  
+  #searchBox{
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+   
+    border-radius: 25px;
+    text-align: center !important; 
+  }
+  
+  #btncustom{
+    border-bottom:  1px solid black !important;
+    width: 150px;
+  }
+  
+  #btnDate{
+    //border: none !important;
+    border-bottom:  1px solid black !important;
+  
+  }
+  
+  .textbox-n{
+    height: 25px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom:  1px solid black !important;
+  
+  }
+  
+  select{
+    border: none;
+    width: 150px !important;
+    height: 30px !important;
+    border-bottom:  1px solid black;
+  
+  }
+  
+  input[type="date"] {
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+    height  : 30px !important;
+    width: 150px !important;
+    border-bottom:  1px solid black !important;
+    text-align: center !important; 
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    color: black !important;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    color: black !important;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 90%;
+  }
+  
+  tr:nth-child(even){background-color: #ffffff}
+  
+  .btnSubmit{
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    #searchBox{
+      display: none;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    
+    mat-table {
+      width: 100% !important;
+      border: thin solid black !important;
+    }
+  
+    .mat-cell,
+    .mat-header-cell {
+    word-wrap: initial;
+    display: table-cell;
+    padding: 0px 10px;
+    line-break: unset;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+    color: black !important;
+    }
+  
+    .mat-row,
+    .mat-header-row {
+    display: table-row;
+  
+  
+    }
+  
+  
+  
+    mat-cell {
+     padding: 16px 0 16px 0;
+     border-bottom: 1px solid #e0e0e0;
+     border-top: 1px solid #e0e0e0;
+    }
+  
+    mat-cell:first-child {
+      border-left: 1px solid #e0e0e0;
+    }
+  
+    mat-cell:last-child {
+      border-right: 1px solid #e0e0e0;
+      border-right: 1px solid #e0e0e0;
+    }
+  
+  
+  }
+  
+  

@@ -1,0 +1,42 @@
+.mat-card-sm-image{
+    align-self: center !important;
+    margin-left:55px;
+    width: 215px;
+}
+h3{
+    margin-left:60px;
+}
+
+.mat-button{
+    width: 100%;
+    background-color: var(--danger)  !important;
+    color: white;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-card {
+    max-width: 400px;
+    width: 22rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: var(--danger) !important;
+}
+
+//    ::ng-deep.mat-form-field-underline {
+//     /*change color of underline*/
+//     background-color: #d73141 !important;
+//   }
+
+::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: var(--danger)  !important;
+}

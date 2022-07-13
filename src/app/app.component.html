@@ -1,0 +1,129 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    *ngIf="gVar.isLoggeddIn"
+    #drawer
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+  >
+    <mat-toolbar
+      ><small>
+        <img src="../assets/new-hamarakendra-logo.png" style="width: 80px; margin-right: 5px" />
+        <a  routerLink="/dashboard">Hamara Kendra</a>
+      </small>
+    </mat-toolbar>
+    <hr class="m-0" />
+    <mat-nav-list>
+      <a
+        mat-list-item
+        class=""
+        routerLinkActive="activeTest"
+        routerLink="/employeeDetails"
+        [routerLinkActiveOptions]="{ exact: true }"
+        *ngIf="flagRole"
+      >
+        <p class="mb-0 p-0" style="font-size: 17px; font-weight: 500">
+          Employee Details
+        </p>
+      </a>
+
+      <a
+      mat-list-item
+      class=""
+      routerLinkActive="activeTest"
+      routerLink="/services"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <p class="mb-0 p-0" style="font-size: 17px; font-weight: 500">
+        Services
+      </p>
+      
+    </a>
+
+    <a
+    mat-list-item
+    class=""
+    routerLinkActive="activeTest"
+    routerLink="/upcommingBooking"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <p class="mb-0 p-0" style="font-size: 17px; font-weight: 500">
+      UpComming Booking
+    </p>
+    
+  </a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar *ngIf="gVar.isLoggeddIn">
+      <button
+        type="button"
+        class="btn"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="toggle()"
+      >
+        <img
+          src="../assets/134216_menu_lines_hamburger_icon.png"
+          style="width: 80%"
+        />
+      </button>
+      <span class="example-spacer"></span>
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with share icon"
+      >
+        <small> </small>
+      </button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="stationMenu"
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 38 38"
+          fill="none"
+        >
+          <circle cx="19" cy="19" r="19" fill="white" />
+          <path
+            d="M28.3334 29.5V27.1667C28.3334 25.929 27.8417 24.742 26.9665 23.8668C26.0913 22.9917 24.9044 22.5 23.6667 22.5H14.3334C13.0957 22.5 11.9087 22.9917 11.0335 23.8668C10.1584 24.742 9.66669 25.929 9.66669 27.1667V29.5"
+            fill="#081D1F"
+          />
+          <path
+            d="M28.3334 29.5V27.1667C28.3334 25.929 27.8417 24.742 26.9665 23.8668C26.0913 22.9917 24.9044 22.5 23.6667 22.5H14.3334C13.0957 22.5 11.9087 22.9917 11.0335 23.8668C10.1584 24.742 9.66669 25.929 9.66669 27.1667V29.5"
+            stroke="#081D1F"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M19 17.8333C21.5773 17.8333 23.6666 15.744 23.6666 13.1667C23.6666 10.5893 21.5773 8.5 19 8.5C16.4227 8.5 14.3333 10.5893 14.3333 13.1667C14.3333 15.744 16.4227 17.8333 19 17.8333Z"
+            fill="#081D1F"
+            stroke="#081D1F"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <mat-menu #stationMenu="matMenu">
+        <button mat-menu-item>  
+          <mat-icon>supervised_user_circle</mat-icon>  
+          <span>{{userName}}</span>  
+        </button>  
+        <button mat-menu-item>
+          <button class="btn mx-2 p-1" (click)="logout()">
+            <i class="fa fa-power-off fa-2x text-dark" aria-hidden="true"></i>
+            Log Out
+          </button>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

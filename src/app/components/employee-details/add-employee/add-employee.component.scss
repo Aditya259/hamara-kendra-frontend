@@ -1,0 +1,201 @@
+.banner {
+    padding-top: 10px;
+    padding-bottom: 80px;
+    padding-left: 10px;
+    background-color: var(--danger);
+    color: #fff;
+  }
+  
+  .mat-button {
+    width: 100%;
+    background-color: var(--danger) !important;
+    color: white;
+  }
+  
+  #subButton{
+  padding-left: 20px !important;
+  } 
+  
+  .example-container {
+    display: block !important;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  .example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+  }
+  
+  .example-margin1 {
+    margin-right: 10px !important;
+  
+  }
+  
+  .descField {
+    padding-left: 26px;
+    width: 980px;
+  }
+  
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: #a11e23 !important;
+  }
+  
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+  .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #a11e23;
+  }
+  
+  .example-full-width {
+    margin-right: 10px;
+  }
+  
+  #dateTimePicker {
+    float: right;
+  }
+  
+  
+  table {
+    width: 100%;
+  }
+  
+  
+  #searchBox {
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+    height: 30px !important;
+    width: 150px !important;
+    border-radius: 25px;
+    border: 2px solid;
+    text-align: center !important;
+  }
+  
+  #btncustom {
+    border-bottom: 1px solid black !important;
+    width: 150px;
+  }
+  
+  #btnDate {
+    //border: none !important;
+    border-bottom: 1px solid black !important;
+  
+  }
+  
+  .align-arrow-right {
+    position: absolute;
+    right: 0; //change as per requirement
+    top: 0; //change as per requirement
+  }
+  
+  .textbox-n {
+    height: 25px;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid black !important;
+  
+  }
+  
+  select {
+    border: none;
+    width: 150px !important;
+    height: 30px !important;
+    border-bottom: 1px solid black;
+  
+  }
+  
+  input[type="date"] {
+    color: rgb(0, 0, 0) !important;
+    background-color: white !important;
+    height: 30px !important;
+    width: 150px !important;
+    border-bottom: 1px solid black !important;
+    text-align: center !important;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 90%;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ffffff
+  }
+  
+  
+  @media only screen and (max-width: 1024px) {
+    .descField {
+      padding-left: 8px;
+      width: 500px !important;
+    }
+  }
+  
+  
+  
+  @media only screen and (max-width: 600px) {
+  
+    #subButton{
+      padding-left: 4px !important;
+      } 
+  
+    .descField {
+      padding-left: 8px;
+      width: 300px !important;
+    }
+  
+  
+    mat-table {
+      overflow-x: scroll;
+    }
+  
+    .mat-cell,
+    .mat-header-cell {
+      word-wrap: initial;
+      display: table-cell;
+      padding: 0px 10px;
+      line-break: unset;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      vertical-align: middle;
+    }
+  
+    .mat-row,
+    .mat-header-row {
+      display: table-row;
+  
+  
+    }
+  
+  
+  
+    mat-cell {
+      padding: 16px 0 16px 0;
+      border-bottom: 1px solid #e0e0e0;
+      border-top: 1px solid #e0e0e0;
+    }
+  
+    mat-cell:first-child {
+      border-left: 1px solid #e0e0e0;
+    }
+  
+    mat-cell:last-child {
+      border-right: 1px solid #e0e0e0;
+    }
+  
+  
+  }

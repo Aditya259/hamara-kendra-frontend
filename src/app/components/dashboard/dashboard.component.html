@@ -1,0 +1,91 @@
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <mat-card class="card border-bottom-danger ">
+        <div class="p-2">
+          <div class="row">
+            <div class="col-12">
+              <div class="col-4 font-size-20">
+                <h4>Employee Location Tracking</h4>
+                <div style="overflow-x: auto;">
+                  <table class="mat-table" id="excel-table">
+                      <tr class="mat-header-row">
+                          <th class="mat-header-cell"><b>Employee Name</b></th>
+                          <th class="mat-header-cell"><b>Live / Current Location Address</b></th>
+                      </tr>
+                      <tr class="mat-row"  *ngFor="let recipient of getUpCommingEvent">
+                          <td class="mat-cell">{{recipient.name}}</td>
+                          <td class="mat-cell">{{recipient.liveOrLastLocation}}</td>
+                      </tr>
+                  </table>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <a routerLink="/complaints">  </a> 
+      <mat-card class="card border-bottom-danger ">
+        <div class="p-2">
+          <div class="row">
+            <div class="col-12">
+              <div class="col-4 font-size-20">
+                
+              </div>
+              <h6>Customer Complaint</h6>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <div class="column">
+       <a routerLink="/feedbacks"> </a> 
+      <mat-card class="card border-bottom-danger">
+        <div class="p-2">
+          <div class="row">
+            <div class="col-12">
+              <div class="col-4 font-size-20">
+             
+              </div>
+              <h6>Customer Feedback</h6>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+
+  </div>
+
+    <div class="column">
+       <a routerLink="/department"> </a> 
+      <mat-card class="card border-bottom-danger">
+        <div class="p-2">
+          <div class="row">
+            <div class="col-12">
+              <div class="col-4 font-size-20">
+               
+              </div>
+              <h6>Department</h6>
+            </div>
+
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="col-sm-6 mx-auto">
+   
+  </div>
+</div>
+
+-->

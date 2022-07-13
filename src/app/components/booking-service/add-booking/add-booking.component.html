@@ -1,0 +1,172 @@
+<div class="banner">
+    <div class="d-inline-flex w-100">
+      <div>
+        <div style="float: left;">
+          <h4 class="my-auto" style="padding-top: 20px;"><b>Booking Details -> Add Booking</b></h4>
+        </div>
+        <div style="float: right;">
+          <div style="float: left">
+            <!---->
+            <mat-list>
+           <mat-list-item>
+                
+           </mat-list-item>
+          </mat-list>
+            <!---->
+        </div>
+        <div style="float: right;padding-top: 13px;">
+         
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="container">
+    <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+      <mat-card
+        style="
+          box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+            0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+          border-radius: 16px;">
+      
+        <div id="customerDetails"  style="width: 100%">
+        <form  #userForm="ngForm"   (ngSubmit)="onClickSubmit(userForm.value)">
+          <mat-grid-list cols="3" rowHeight="60px">
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>User Name</mat-label>
+              <input type="text"
+                     placeholder="User Name"
+                     matInput
+                     [(ngModel)]="selectedUserName" 
+                     name ="userName"
+                     autocomplete="off"
+                     ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Booking Status</mat-label>
+                <mat-select  name="bookingStatus"  [(ngModel)]="selectedbookingStatus" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allCompanyList"
+                    [value]="framwork">
+                    {{ framwork }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Employee Name</mat-label>
+                <mat-select  name ="employeeName"  [(ngModel)]="selectedEmployeeName" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of employeeName"
+                    [value]="framwork">
+                    {{ framwork }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Booking Date</mat-label>
+                <input matInput name="date" [matDatepicker]="picker"  [(ngModel)]="selectedbookingDate" ngModel>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>Email Address</mat-label>
+              <input type="text"
+                     placeholder="Email Address"
+                     matInput
+                     name ="userEmailId"
+                     autocomplete="off"
+                     [(ngModel)]="selectedUserEmailId"
+                     ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>Mobile Number</mat-label>
+              <input type="text"
+                     placeholder="Mobile Number"
+                     matInput
+                     name ="userMobileNo"
+                     autocomplete="off"
+                     [(ngModel)]="selectedUserMobileNo"
+                     ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>City</mat-label>
+              <input type="text"
+                     placeholder="City"
+                     matInput
+                     name ="city"
+                     autocomplete="off"
+                     [(ngModel)]="selectedcity"
+                     ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>State</mat-label>
+              <input type="text"
+                     placeholder="State"
+                     matInput
+                     name ="state"
+                     autocomplete="off"
+                     [(ngModel)]="selectedstate"
+                     ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>User Address</mat-label>
+              <textarea type="text"
+                     placeholder="User Address"
+                     matInput
+                     name ="userAddress"
+                     autocomplete="off"
+                     [(ngModel)]="selecteduserAddress"
+                     ngModel>
+                     </textarea>
+              </mat-form-field>
+            </mat-grid-tile>    
+          </mat-grid-list>
+          <input type="hidden"  [(ngModel)]="selectedId" name="id">
+          <div class="text-center mt-3" id="subButton">
+            <!-- <button mat-raised-button color="secondary">Primary</button> -->
+            <button mat-raised-button
+              style="font-size: 1rem;background-color: var(--danger) !important; color: #fff !important;"
+              class="btn btn-danger mx-3"> Submit</button>
+          </div>
+        </form>
+        </div>
+
+
+
+
+
+</mat-card>
+      
+<br />
+</div>
+</div>

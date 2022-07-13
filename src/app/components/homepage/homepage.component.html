@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Services</a>
+
+  </div>-->
+
+  <!-- Navbar on small screens 
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Services</a>
+   
+  </div>
+</div>-->
+
+<div class="w3-top">
+  <mat-toolbar color="primary">
+    <span class="fill-remaining-space">
+      <span class="fill-remaining-space" style="margin-right: 10px;">
+      <button mat-icon-button >
+        <mat-label>Home</mat-label>
+      </button>
+    </span>
+      <span class="fill-remaining-space">
+      <button mat-icon-button [matMenuTriggerFor]="services">
+        <mat-label>Services</mat-label>
+      </button>
+      <mat-menu #services="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item *ngFor="let a of allServices">
+          <span>{{a.name}}</span>
+        </button>
+      </mat-menu>
+       
+      </span>
+    </span>
+    <!--<span class="fill-remaining-space">Hamara Kendra</span>-->
+  </mat-toolbar>
+</div>
+
+<!-- Header -->
+<header  style="padding:80px 16px">
+  <mat-carousel  timings="250ms ease-in"
+  [autoplay]="true"
+  interval="5000"
+  maxWidth="auto"
+  maxHeight="500px"
+    proportion="25"
+    slides="5"
+    [loop]="true"
+    [hideArrows]="false"
+    [hideIndicators]="false"
+    [useKeyboard]="true"
+    [useMouseWheel]="false"
+    orientation="ltr">
+    <mat-carousel-slide  #matCarouselSlide
+    *ngFor="let slide of slides; let i = index"
+    [image]="slide.url"
+    overlayColor="#00000040"
+    [hideOverlay]="false">
+     
+    </mat-carousel-slide>
+  </mat-carousel>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+      <h1>Servies</h1>
+      <mat-grid-list cols="4" >
+        <mat-grid-tile *ngFor="let a of allServices" (click)="popup = true">{{a.name}}</mat-grid-tile>
+        
+      </mat-grid-list>
+  </div>
+</div>
+
+<div class="overlay" *ngIf="popup">
+	<div class="popup">
+		<h2>Here i am</h2>
+		<a class="close" (click)="popup = false">&times;</a>
+		<div class="content">
+		you have selected this event
+		</div>
+	</div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+   <!-- <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>-->
+<table style="width:100%;">
+    <tr><td style="text-align: left;width:50%">Home</td><td style="text-align: right;width:50%"> <a
+      mat-list-item
+      class=""
+      routerLinkActive="activeTest"
+      routerLink="/serviceSelection"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >Book services</a></td></tr>
+    <tr><td style="text-align: left;">Services</td></tr>
+    <tr><td style="text-align: left;">Contact us</td></tr>
+</table>
+
+<p>Powered by <a href="£" target="_blank">Hamara Kendra</a></p>
+</div>
+
+
+
+<!-- Footer 
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="£" target="_blank">Hamara Kendra</a></p>
+</footer>-->
+
+
+
+
+
+</body>
+</html>

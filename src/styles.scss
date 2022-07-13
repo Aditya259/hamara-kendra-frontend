@@ -1,0 +1,227 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$solar-cms-primary: mat-palette($mat-indigo);
+$solar-cms-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$solar-cms-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$solar-cms-theme: mat-light-theme(
+  $solar-cms-primary, $solar-cms-accent, $solar-cms-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($solar-cms-theme);
+
+/* You can add global styles to this file, and also import other style files */
+$custom-typography: mat-typography-config(
+  $font-family: Trebuchet MS
+);
+
+@include mat-core($custom-typography);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+* {
+  --danger: #981010;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: var(--danger) !important;
+  background-color: var(--danger) !important;
+  font-size: 11px;
+  color: #fff !important;
+}
+
+.swal2-styled.swal2-confirm {
+  background-color: var(--danger) !important;
+}
+
+.swal2-styled.swal2-confirm:active {
+  background-color: var(--danger) !important;
+}
+
+.swal2-styled.swal2-cancel {
+  background-color: var(--danger) !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: var(--danger) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  background: var(--danger) !important;
+}
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+  background-color: #fff !important;
+}
+
+#swal2-title {
+  font-size: 18px;
+  color: black;
+}
+
+#swal2-html-container {
+  font-size: 12px;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: var(--danger) !important;
+  color: #fff !important;
+  font-size: 11px !important;
+}
+.swal2-icon.swal2-success [class^="swal2-success-line"] {
+  color: var(--danger) !important;
+  background: var(--danger) !important;
+}
+.swal2-popup {
+  border-bottom: 8px solid var(--danger) !important;
+}
+
+mat-cell {
+  padding: 1px 4px;
+}
+
+.choices__inner {
+  background-color: #ffffff !important;
+  padding: 5.5px 6.5px !important;
+}
+
+
+.choices__list--multiple .choices__item {
+
+  background-color: #981010 !important;
+  border: 1px solid #981010 !important;
+}
+
+.choices[data-type*="select-multiple"] .choices__button, .choices[data-type*="text"] .choices__button {
+  border-left: 1px solid #981010 !important;
+}
+
+
+
+
+
+.browser-screen-loading-content {
+  text-align: center;
+  padding-top: 18em;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #e8e8e8;
+  z-index: 99;
+}
+.loading-dots {
+  margin-left: -1.5em;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-animation: loading-dots-fadein .5s linear forwards;
+  -moz-animation: loading-dots-fadein .5s linear forwards;
+  -o-animation: loading-dots-fadein .5s linear forwards;
+  -ms-animation: loading-dots-fadein .5s linear forwards;
+  animation: loading-dots-fadein .5s linear forwards;
+}
+.loading-dots i {
+  width: .5em;
+  height: .5em;
+  display: inline-block;
+  vertical-align: middle;
+  background: #e0e0e0;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 .125em;
+  -webkit-animation: loading-dots-middle-dots .5s linear infinite;
+  -moz-animation: loading-dots-middle-dots .5s linear infinite;
+  -o-animation: loading-dots-middle-dots .5s linear infinite;
+  -ms-animation: loading-dots-middle-dots .5s linear infinite;
+  animation: loading-dots-middle-dots .5s linear infinite;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+
+  box-shadow: 0px 0px 4px #2a2929 !important;
+}
+mat-sidenav{
+  box-shadow: 0px 2px 4px #a2a2a2 !important;
+}
+.activeTest g {
+  fill: white;
+}
+@media only screen and (max-width: 470px) {
+  .english_bell{
+    display: none;
+  }
+}
+
+.loading-dots.dark-gray i {
+  background: #981010;
+}
+.loading-dots i:first-child {
+  -webkit-animation: loading-dots-first-dot .5s infinite;
+  -moz-animation: loading-dots-first-dot .5s linear infinite;
+  -o-animation: loading-dots-first-dot .5s linear infinite;
+  -ms-animation: loading-dots-first-dot .5s linear infinite;
+  animation: loading-dots-first-dot .5s linear infinite;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(-1em);
+  -moz-transform: translate(-1em);
+  -o-transform: translate(-1em);
+  -ms-transform: translate(-1em);
+  transform: translate(-1em);
+}
+.loading-dots i:last-child {
+  -webkit-animation: loading-dots-last-dot .5s linear infinite;
+  -moz-animation: loading-dots-last-dot .5s linear infinite;
+  -o-animation: loading-dots-last-dot .5s linear infinite;
+  -ms-animation: loading-dots-last-dot .5s linear infinite;
+  animation: loading-dots-last-dot .5s linear infinite;
+}
+
+
+@-moz-keyframes loading-dots-fadein{100%{opacity:1;-ms-filter:none;filter:none}}
+@-webkit-keyframes loading-dots-fadein{100%{opacity:1;-ms-filter:none;filter:none}}
+@-o-keyframes loading-dots-fadein{100%{opacity:1;-ms-filter:none;filter:none}}
+@keyframes loading-dots-fadein{100%{opacity:1;-ms-filter:none;filter:none}}
+
+@-moz-keyframes loading-dots-first-dot{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em);opacity:1;-ms-filter:none;filter:none}}
+@-webkit-keyframes loading-dots-first-dot{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em);opacity:1;-ms-filter:none;filter:none}}
+@-o-keyframes loading-dots-first-dot{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em);opacity:1;-ms-filter:none;filter:none}}
+@keyframes loading-dots-first-dot{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em);opacity:1;-ms-filter:none;filter:none}}
+
+
+@-moz-keyframes loading-dots-middle-dots{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em)}}
+@-webkit-keyframes loading-dots-middle-dots{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em)}}
+@-o-keyframes loading-dots-middle-dots{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em)}}
+@keyframes loading-dots-middle-dots{100%{-webkit-transform:translate(1em);-moz-transform:translate(1em);-o-transform:translate(1em);-ms-transform:translate(1em);transform:translate(1em)}}
+
+
+@-moz-keyframes loading-dots-last-dot{100%{-webkit-transform:translate(2em);-moz-transform:translate(2em);-o-transform:translate(2em);-ms-transform:translate(2em);transform:translate(2em);opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}}
+@-webkit-keyframes loading-dots-last-dot{100%{-webkit-transform:translate(2em);-moz-transform:translate(2em);-o-transform:translate(2em);-ms-transform:translate(2em);transform:translate(2em);opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}}
+@-o-keyframes loading-dots-last-dot{100%{-webkit-transform:translate(2em);-moz-transform:translate(2em);-o-transform:translate(2em);-ms-transform:translate(2em);transform:translate(2em);opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}}
+@keyframes loading-dots-last-dot{100%{-webkit-transform:translate(2em);-moz-transform:translate(2em);-o-transform:translate(2em);-ms-transform:translate(2em);transform:translate(2em);opacity:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:alpha(opacity=0)}}

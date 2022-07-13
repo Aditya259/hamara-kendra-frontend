@@ -1,0 +1,109 @@
+<div class="banner">
+  <div class="d-inline-flex w-100">
+    <div style="width:100%;margin-left: auto;">
+      <div style="float: left;">
+        <h4 class="my-auto" style="padding-top: 20px;"><b>Interation Log</b></h4>
+      </div>
+      <div style="float: right;">
+        <mat-list>
+          <mat-list-item style="background-color: white !important; border-radius: 25px;width: 200px !important;height: 35px;">
+            <mat-icon mat-list-icon>search</mat-icon>
+              <input matInput  mat-line placeholder=" Search.."> &nbsp;&nbsp;
+          </mat-list-item>
+        </mat-list>
+       
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container ">
+  <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem;">
+    <mat-card style="box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+        border-radius: 16px;">
+      <h4></h4>
+      <div style="float:right">
+        <a mat-button style="background-color: var(--danger); color: white;"(click)="redirectToEdit(selectedCustomerCode)" target="_blank">Edit</a>
+
+      </div>
+      <form > 
+        <div id="customerDetails" style="overflow-x: auto;">
+          <h3><b>Booking Details</b></h3>
+          <hr>
+          <table style="width: 100%;" class="mat-table">
+            <tr>
+            <td style="padding-bottom: 5px;"><strong>Interaction log Id : </strong> {{selectedEnquiryId}} </td> 
+            <td style="padding-bottom: 5px;"><strong>Customer Name : </strong> {{selectedCustomerName}}</td> 
+            <td style="padding-bottom: 5px;"><strong>Customer Code : </strong> {{selectedCustomerCode}} </td>
+            </tr>
+            <tr> 
+            <td style="padding-bottom: 5px;"><strong>Company : </strong> {{selectedCompany}}</td> 
+            <td style="padding-bottom: 5px;"><strong>Segment : </strong> {{selectedSegment}}</td>
+            <td style="padding-bottom: 5px;"><strong>Industry : </strong> {{selectedIndustry}}</td> 
+            </tr>
+            <tr>
+            <td style="padding-bottom: 5px;"><strong>Parent Company : </strong> {{selectedParentCompany}}</td>
+            <td style="padding-bottom: 5px;"><strong>Subsidary Company : </strong> {{selectedParentCompany}}</td> 
+            <td style="padding-bottom: 5px;"><strong>Subsidary Area : </strong> {{selectedSubsidaryArea}}</td> 
+            </tr>
+            <tr>
+            <td style="padding-bottom: 5px;"><strong>Subsidary Channel : </strong> {{selectedSubsidaryChannel}}</td> 
+            <td style="padding-bottom: 5px;"><strong>Country : </strong> {{selectedCountry}}</td> 
+            <td style="padding-bottom: 5px;"><strong>State : </strong> {{selectedState}}</td> 
+            </tr>
+            <tr>
+              <td colspan="3"> </td>
+            </tr>
+            <tr>
+              <td colspan="3"> </td>
+            </tr>
+            <tr>
+              <td colspan="3"><h3><b>Contact Person Details</b> </h3></td>
+            </tr>
+            <tr>
+              <td colspan="3"><hr></td>
+            </tr>
+            <tr>
+              <td style="padding-bottom: 5px;"><strong>Contact Person Company : </strong> {{selectedCpdContactPersonCompany}} </td> 
+              <td style="padding-bottom: 5px;"><strong>Contact Person : </strong> {{selectedCpdContactPerson}}</td> 
+              <td style="padding-bottom: 5px;"><strong>Designation : </strong> {{selectedCpdDesignationn}} </td>
+            </tr>
+            <tr>
+              <td style="padding-bottom: 5px;"><strong>Email : </strong> {{selectedCpdEmail}}</td>
+            </tr>
+            <tr>
+              <td colspan="3"> </td>
+            </tr>
+            <tr>
+              <td colspan="3"> </td>
+            </tr>
+            <tr>
+              <td colspan="3"><h3><b>Extra Details</b> </h3></td>
+            </tr>
+            <tr>
+              <td colspan="3"><hr></td>
+            </tr>
+            <tr><td style="padding-bottom: 5px;"><strong> Date : </strong> {{selectedEmaildatePicker}}</td>
+              <td style="padding-bottom: 5px;"><strong> Subject : </strong>{{selectedextraSubject}}</td>
+              <td style="padding-bottom: 5px;"><strong>Contact Person : </strong>{{selectedextraContactPerson}}</td> 
+              </tr>
+              <tr>
+              <td style="padding-bottom: 5px;"><strong>Contact Number : </strong>{{selectedextraContactNo}}</td>
+              <td style="padding-bottom: 5px;"><strong>Designation :</strong> {{selectedextraDescription}}</td>
+              <td style="padding-bottom: 5px;"><strong>Purpose of Email : </strong>{{selectedextraPurposeOfEmail}}</td>
+              </tr>
+          </table>
+          
+          <br>
+         
+          
+
+         
+        </div>
+      </form>
+    </mat-card>
+
+  </div>
+
+</div>

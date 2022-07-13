@@ -1,0 +1,66 @@
+<div class="banner">
+    <div class="d-inline-flex w-100">
+        <div>
+            <div style="float: left;">
+                <h4 class="my-auto" style="padding-top: 20px;"><b>Upcomming Booking</b></h4>
+            </div>
+            <div style="float: right;">
+                <div style="float: left">
+                    <!---->
+                    <mat-list>
+                        <mat-list-item>
+                        </mat-list-item>
+                    </mat-list>
+                    <!---->
+                </div>
+                <div style="float: right;padding-top: 13px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+        <mat-card style="
+          box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+            0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+          border-radius: 16px;">
+
+
+            <div style="overflow-x: auto;">
+                <table class="mat-table" id="excel-table">
+                    <tr class="mat-header-row">
+                        <th class="mat-header-cell"><b>Booking Id</b></th>
+                        <th class="mat-header-cell"><b>Customer Name</b></th>
+                        <th class="mat-header-cell"><b>Employee Name</b></th>
+                        <th class="mat-header-cell"><b>User Address</b></th>
+                        <th class="mat-header-cell"><b>Booking Status</b></th>
+                        <th class="mat-header-cell"><b>Booking Date</b></th>
+                        <th class="mat-header-cell"><b>Live / Current Location Address</b></th>
+                       
+                    </tr>
+
+                    <tr class="mat-row"  *ngFor="let recipient of getUpCommingEvent">
+                        <td class="mat-cell"><a style="color:var(--danger);cursor: pointer;" ></a>{{recipient.bookingId}}</td>
+                        <td class="mat-cell">{{recipient.userName}}</td>
+                        <td class="mat-cell">{{recipient.employeeName}}</td>
+                        <td class="mat-cell">{{recipient.userAddress}}</td>
+                        <td class="mat-cell">{{recipient.bookingStatus}}</td>
+                        <td class="mat-cell">{{recipient.bookingDate}}</td>
+                        <td class="mat-cell">{{liveCurrentLocation}}</td>
+                      </tr>
+
+
+                </table>
+            </div>
+
+
+
+        </mat-card>
+
+        <br />
+    </div>
+</div>

@@ -1,0 +1,344 @@
+<div class="banner">
+  <div class="d-inline-flex w-100">
+    <div>
+      <div style="float: left;">
+        <h4 class="my-auto" style="padding-top: 20px;"><b>User List</b></h4>
+      </div>
+      <div style="float: right;">
+        <div style="float: left">
+          <!---->
+          <mat-list>
+          <mat-list-item style="background-color: white !important; border-radius: 25px;width: 200px !important;height: 35px;">
+            <mat-icon mat-list-icon>search</mat-icon>
+              <input matInput  mat-line placeholder=" Search.."> &nbsp;&nbsp;
+          </mat-list-item>
+        </mat-list>
+          <!---->
+      </div>
+      <div style="float: right;padding-top: 13px;">
+        &nbsp;&nbsp;<a style="padding-right: 15px; cursor: pointer;" (click)="addEditInterationLog()" ><mat-icon aria-label="Example home icon">add_circle_outline</mat-icon></a>
+        <a style="padding-right: 15px; cursor: pointer;" (click)="exportexcel()"> <mat-icon aria-label="Example home icon">cloud_download</mat-icon> </a> 
+        <a style="padding-right: 15px; cursor: pointer;" (click)="onShowFilter()"> <mat-icon aria-label="Example home icon">filter_list</mat-icon> </a> 
+
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="container">
+  <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+    <mat-card
+      style="
+        box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+          0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+        border-radius: 16px;">
+      <h4></h4>
+      <br />
+      <div id="customerDetails" style="width: 100%" [hidden]="isShowDiv">
+        <h5></h5>
+        <form   #userForm="ngForm"   (ngSubmit)="onClickSubmit(userForm.value)">
+
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedEnquiryId!=null">Enquiry Id : {{selectedEnquiryId}}
+            <mat-icon matChipRemove (click)="removeAssignments('enqId')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedCustomerName!=null">Customer Name : {{selectedCustomerName}}
+            <mat-icon matChipRemove (click)="removeAssignments('custname')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedCustomerCode!=null">Customer Code : {{selectedCustomerCode}}
+            <mat-icon matChipRemove (click)="removeAssignments('custCode')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedSubsidaryCompany!=null">Subsidary Company : {{selectedSubsidaryCompany}}
+            <mat-icon matChipRemove (click)="removeAssignments('subCompany')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedCompany!=null">Company : {{selectedCompany}}
+            <mat-icon matChipRemove (click)="removeAssignments('company')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedExtModeOfContact!=null">Type : {{selectedExtModeOfContact}}
+            <mat-icon matChipRemove (click)="removeAssignments('type')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedExtPurposeOfEmail!=null">Purpose : {{selectedExtPurposeOfEmail}}
+            <mat-icon matChipRemove (click)="removeAssignments('purpose')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedEmployee!=null">Employee : {{selectedEmployee}}
+            <mat-icon matChipRemove (click)="removeAssignments('employee')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedCountry!=null">Country : {{selectedCountry}}
+            <mat-icon matChipRemove (click)="removeAssignments('country')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="selectedState!=null">State : {{selectedState}}
+            <mat-icon matChipRemove (click)="removeAssignments('state')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="fromDateFilter!=null">From Date: {{fromDateFilter}}
+            <mat-icon matChipRemove (click)="removeAssignments('fromDateFilter')">cancel</mat-icon>
+          </mat-chip>
+          <mat-chip style="background-color: var(--danger);" selected *ngIf="toDateFilter!=null">To Date : {{toDateFilter}}
+            <mat-icon matChipRemove (click)="removeAssignments('toDateFilter')">cancel</mat-icon>
+          </mat-chip>
+        </mat-chip-list>
+        <br>
+        <!--Existing Customer-->
+      
+          <mat-grid-list cols="3" rowHeight="60px">
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>Interaction log Id </mat-label>
+              <input type="text"
+                     placeholder="Pick one"
+                     [(ngModel)]="selectedEnquiryId"  
+                     matInput
+                     (ngModelChange)="getByEnquiryId($event)"
+                     [formControl]="myControl2"
+                     [matAutocomplete]="auto2"
+                     name ="enqId"
+
+                     ngModel>
+              <mat-autocomplete autoActiveFirstOption #auto2="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptionsEnquiryId | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>Customer Name</mat-label>
+              <input type="text"
+                     placeholder="Pick one"
+                     [(ngModel)]="selectedCustomerName"  
+                     matInput
+                     (ngModelChange)="getByCustomerName($event)"
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto"
+                     name ="custName"
+
+                     ngModel>
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </mat-grid-tile>
+      
+
+                <mat-grid-tile>
+                  <mat-form-field>
+                  <mat-label>Customer Code</mat-label>
+                  <input type="text"
+                        placeholder="Customer Code"
+                        [(ngModel)]="selectedCustomerCode"  
+                        matInput
+                        (ngModelChange)="getByid($event)"
+                        [formControl]="myControl1"
+                        [matAutocomplete]="auto1"
+                        name ="custName" 
+                        [multiple]="false"
+                        ngModel>
+                  <mat-autocomplete autoActiveFirstOption #auto1="matAutocomplete">
+                    <mat-option *ngFor="let option1 of filteredOptionsCode | async" [value]="option1">
+                      {{option1}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                </mat-grid-tile>
+
+
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Sector</mat-label>
+                <mat-select  [(ngModel)]="selectedSector" name ="selectedSector"  ngModel >
+                  <mat-option
+                    *ngFor="let framwork of allSectorList"
+                    [value]="framwork.name"
+                   
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              </mat-grid-tile
+            >
+            <mat-grid-tile>
+              <mat-form-field>
+              <mat-label>Subsidary</mat-label>
+              <mat-select  [(ngModel)]="selectedSubsidaryCompany" name ="selectedSubsidaryCompany" ngModel>
+                <mat-option
+                  *ngFor="let framwork of allSubCompany"
+                  [value]="framwork.name">
+                        {{ framwork.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Company</mat-label>
+                <mat-select [(ngModel)]="selectedCompany" name ="selectedCompany" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allCompanyList"
+                    [value]="framwork.name"
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Type</mat-label>
+                <mat-select [(ngModel)]="selectedExtModeOfContact" name ="selectedExtModeOfContact" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of modeOfContact"
+                    [value]="framwork"
+                  >
+                    {{ framwork }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Purpose</mat-label>
+                <mat-select [(ngModel)]="selectedExtPurposeOfEmail" name ="selectedExtPurposeOfEmail" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allPurposeList"
+                    [value]="framwork.name"
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field class="example-full-width">
+                <mat-label>Employee</mat-label> 
+                <mat-select [(ngModel)]="selectedEmployee"  name ="selectedEmployee" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allEmpList"
+                    [value]="framwork.name"
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+                </mat-form-field
+            ></mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select [(ngModel)]="selectedCountry"  name ="selectedCountry" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allCountryList"
+                    [value]="framwork.name"
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>State</mat-label>
+                <mat-select [(ngModel)]="selectedState"  name ="selectedState" ngModel>
+                  <mat-option
+                    *ngFor="let framwork of allStateList"
+                    [value]="framwork.name"
+                  >
+                    {{ framwork.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>From Date</mat-label>
+                <input matInput type="datetime-local" placeholder="From date"  name ="fromDateFilter" ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>To Date</mat-label>
+                <input matInput type="datetime-local" placeholder="To date"  name ="toDateFilter" ngModel>
+              </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile >
+              <div style="left:-150px !important">
+             <button style="padding-right: 15px; cursor: pointer;" class="btnSubmit"> <mat-icon aria-label="Example home icon">search</mat-icon> </button >
+             <button style="padding-right: 15px; cursor: pointer;" (click)="reset()" id="reset" type="reset"> <mat-icon aria-label="Example home icon" >clear_all</mat-icon></button>
+             <a style="padding-right: 15px; cursor: pointer;" (click)="exportexcel()"> <mat-icon aria-label="Example home icon">cloud_download</mat-icon> </a> 
+            </div>
+            </mat-grid-tile>
+
+          </mat-grid-list>         
+        </form>
+      </div>
+      <br />
+      <div style="overflow-x: auto;">
+        <table class="mat-table" id="excel-table"  >
+          <tr class="mat-header-row">
+            <th class="mat-header-cell"><b>Interaction log Id</b></th>
+            <th class="mat-header-cell"><b>Customer Code</b></th>
+            <th class="mat-header-cell"><b>Customer Name</b></th>
+            <th class="mat-header-cell"><b>Sector</b></th>
+            <th class="mat-header-cell"><b>Subsidary</b></th>
+            <th class="mat-header-cell"><b>Company</b></th>
+            <th class="mat-header-cell"><b>Type</b></th>
+            <th class="mat-header-cell"><b>Purpose</b></th>
+            <th class="mat-header-cell"><b>Employee</b></th>
+            <th class="mat-header-cell"><b>Date</b></th>
+            <th class="mat-header-cell"><b>Action</b></th>
+          </tr>
+
+          <tr class="mat-row" *ngFor="let recipient of tableData" >
+            <td class="mat-cell"><a style="color:var(--danger);cursor: pointer;" (click)="listOfUser(recipient.enquiryId)">{{ recipient.enquiryId }}</a></td>
+             <td class="mat-cell">{{ recipient.customerCode }}</td>
+            <td class="mat-cell">{{ recipient.customerName }}</td>
+            <td class="mat-cell">{{ recipient.sector }}</td>
+            <td class="mat-cell">{{ recipient.subsidaryCompany }}</td>
+            <td class="mat-cell">{{ recipient.company }}</td>
+            <td class="mat-cell">{{ recipient.extModeOfContact }}</td>
+            <td class="mat-cell">{{ recipient.extPurposeOfEmail }}</td>
+            <td class="mat-cell">{{ recipient.cpdContactPerson }}</td>
+            <td class="mat-cell">{{ recipient.dateToDisplay }}</td>
+            <td class="mat-cell"><a  style="cursor: pointer;" [matMenuTriggerFor]="menu"> <mat-icon aria-label="Example home icon">drag_indicator</mat-icon>  </a>
+              <mat-menu #menu="matMenu">
+                <a mat-menu-item (click)="redirectToView(recipient.enquiryId)">View Customer Details</a>
+                <a mat-menu-item (click)="redirectToEdit(recipient.customerCode)">Edit Customer Details</a>
+              </mat-menu>
+          </td>
+          </tr>
+          <tr class="mat-row" *ngIf="toggleWithTableData">
+            <td colspan="11" style="text-align: center;"><h3>{{tableErrorMsg}}</h3></td>
+          </tr>
+          
+        </table>
+        <mat-paginator [length]="100"
+              [pageSize]="5"
+              [length]="5"
+              [pageSizeOptions]="[5, 10, 15, 20]"
+              aria-label="Select page"
+              (page)="getNext($event)">
+      </mat-paginator>
+      </div>
+      
+    </mat-card>
+    
+    <br />
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="banner">
+    <div class="d-inline-flex w-100">
+        <div>
+            <div style="float: left;">
+                <h4 class="my-auto" style="padding-top: 20px;"><b>Location On / Off</b></h4>
+            </div>
+            <div style="float: right;">
+                <div style="float: left">
+                    <!---->
+                    <mat-list>
+                        <mat-list-item>
+
+                        </mat-list-item>
+                    </mat-list>
+                    <!---->
+                </div>
+                <div style="float: right;padding-top: 13px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+        <mat-card style="
+          box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+            0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+          border-radius: 16px;">
+            <div id="mainDiv">
+
+                <mat-button-toggle-group #toggleBtn="matButtonToggleGroup" (change)="location($event)">
+                    <mat-button-toggle value="On" >
+                        On Location Service
+                    </mat-button-toggle>
+                    <mat-button-toggle value="Off">
+                        Off Location Serive
+                    </mat-button-toggle>
+                </mat-button-toggle-group>
+                <br>
+                <br>
+                <mat-label> You have selected : {{ this.globalVar.locationService }} </mat-label>
+                <br>
+                <mat-hint *ngIf="this.globalVar.subArea1 !='' && this.globalVar.subArea1!=null "><b>Area - </b> {{ this.globalVar.subArea1  }} </mat-hint>
+                <br>
+                <mat-hint *ngIf="this.globalVar.city !='' && this.globalVar.city!=null "><b>City - </b>{{  this.globalVar.city }}</mat-hint>
+                <br>
+                <mat-hint *ngIf="this.globalVar.state !='' && this.globalVar.state!=null "><b>State - </b>{{ this.globalVar.state }}</mat-hint>
+                <br>
+                <mat-hint *ngIf="this.globalVar.postcode !='' && this.globalVar.postcode!=null "><b>Postcode - </b>{{ this.globalVar.postcode }}</mat-hint>
+                <br>
+                <mat-hint *ngIf="this.globalVar.country !='' && this.globalVar.country!=null "><b>Country - </b>{{ this.globalVar.country }}</mat-hint>
+                <br>
+                <mat-hint *ngIf="this.globalVar.country_code !='' && this.globalVar.country_code!=null "><b>Country Code - </b>{{ this.globalVar.country_code  }}
+                </mat-hint>
+                <br>
+                <mat-hint><b>Note - </b>If Location Service is off you need to type
+                    address manually</mat-hint>
+
+
+
+                <br>
+                <br>
+
+            </div>
+        </mat-card>
+
+        <br />
+    </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="banner">
+  <div class="d-inline-flex w-100">
+    <div>
+      <div style="float: left;">
+        <h4 class="my-auto" style="padding-top: 20px;"><b>Employee Details</b></h4>
+      </div>
+      <div style="float: right;">
+        <div style="float: left;margin-right: 13px;">
+          <!---->
+          <mat-list>
+            <button mat-raised-button (click)="addBooking()">Add Employee</button>
+        </mat-list>
+          <!---->
+      </div>
+      <div style="float: right;padding-top: 13px;">
+       
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="container">
+  <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+    <mat-card
+      style="
+        box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+          0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+        border-radius: 16px;">
+<div style="overflow-x: auto;">
+    <table class="mat-table" id="excel-table"  >
+      <tr class="mat-header-row">
+        <th class="mat-header-cell"><b>Employee Id</b></th>
+        <th class="mat-header-cell"><b>Employee Name</b></th>
+        <th class="mat-header-cell"><b>Employee DOB</b></th>
+        <th class="mat-header-cell"><b>Employee Area</b></th>
+        <th class="mat-header-cell"><b>Employee Mobile No.</b></th>
+        <th class="mat-header-cell"><b>Employee Email Address</b></th>
+        <th class="mat-header-cell"><b>Action</b></th>
+      </tr>
+
+      <tr class="mat-row"  *ngFor="let recipient of tableData">
+        <td class="mat-cell"><a style="color:var(--danger);cursor: pointer;" ></a>{{recipient.employeeId}}</td>
+        <td class="mat-cell">{{recipient.employeeName}}</td>
+        <td class="mat-cell">{{recipient.employeeDob}}</td>
+        <td class="mat-cell">{{recipient.employeeArea}}</td>
+        <td class="mat-cell">{{recipient.employeeMobileNo}}</td>
+        <td class="mat-cell">{{recipient.employeeEmailAddress}}</td>
+        <td class="mat-cell"><a  style="cursor: pointer;" [matMenuTriggerFor]="menu"> <mat-icon aria-label="Example home icon">drag_indicator</mat-icon>  </a>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item (click)="redirectToView(recipient.id)">View Customer Details</a>
+            <a mat-menu-item (click)="redirectToEdit(recipient.id)">Edit Customer Details</a>
+          </mat-menu>
+      </td>
+      </tr>
+      <tr class="mat-row" >
+        <td colspan="11" style="text-align: center;"><h3>{{tableErrorMsg}}</h3></td>
+      </tr>
+      
+    </table>
+    <mat-paginator [length]="100"
+          [pageSize]="5"
+          [length]="5"
+          [pageSizeOptions]="[5, 10, 15, 20]"
+          aria-label="Select page"
+        >
+  </mat-paginator>
+  </div>
+    
+</mat-card>
+    
+<br />
+</div>
+</div>

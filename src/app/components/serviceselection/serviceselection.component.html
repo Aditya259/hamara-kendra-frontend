@@ -1,0 +1,93 @@
+<div class="banner">
+    <div class="d-inline-flex w-100">
+        <div>
+            <div style="float: left;">
+                <h4 class="my-auto" style="padding-top: 20px;"><b>Service -> Service Booking Slot</b></h4>
+            </div>
+            <div style="float: right;">
+                <div style="float: left">
+                    <!---->
+                    <mat-list>
+                        <mat-list-item>
+
+                        </mat-list-item>
+                    </mat-list>
+                    <!---->
+                </div>
+                <div style="float: right;padding-top: 13px;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="container">
+    <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+        <mat-card style="
+          box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+            0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+          border-radius: 16px;">
+
+<form  #userForm="ngForm"   (ngSubmit)="onClickSubmit(userForm.value)">
+            <div id="customerDetails" style="width: 100%">
+                <mat-grid-list cols="1" rowHeight="60px">
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <mat-label>Select services</mat-label>
+                            <mat-select name ="serviceName"  [(ngModel)]="selectedServiceName"  ngModel>
+                                <mat-option
+                    *ngFor="let framwork of listOfAllServices"
+                    [value]="framwork">
+                    {{ framwork }}
+                  </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                    <mat-grid-tile>
+                        <mat-form-field>
+                          <mat-label>Available Slot Booking Date</mat-label>
+                          <input matInput name="date" [matDatepicker]="picker"  ngModel>
+                          <mat-hint>MM/DD/YYYY</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                      </mat-grid-tile>
+
+                      <mat-grid-tile>
+
+                        <mat-form-field>
+                            <mat-label>Area / Location / Address</mat-label>
+                            <textarea matInput 
+                            placeholder="Area / Location / Address" 
+                            [(ngModel)]="selectedArea"
+                            name="selectedArea"
+                            ngModel>
+                         </textarea>
+                          </mat-form-field>
+                        </mat-grid-tile>
+
+                      
+
+                </mat-grid-list>
+
+                <br>
+                <br>
+                <div class="text-center mt-3" id="subButton">
+                    <!-- <button mat-raised-button color="secondary">Primary</button> -->
+                    <button mat-raised-button
+                      style="font-size: 1rem;background-color: var(--danger) !important; color: #fff !important;"
+                      class="btn btn-danger mx-3"> Submit</button>
+                  </div>
+            </div>
+</form>
+
+
+
+        </mat-card>
+
+        <br />
+    </div>
+</div>

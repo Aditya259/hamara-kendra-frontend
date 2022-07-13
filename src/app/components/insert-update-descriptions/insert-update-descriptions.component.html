@@ -1,0 +1,151 @@
+<div class="banner">
+  <div class="d-inline-flex w-100">
+    <div>
+      <div style="float: left;">
+        <h4 class="my-auto" style="padding-top: 20px;"><b>Add Menu Description</b></h4>
+      </div>
+      <div style="float: right;">
+        <div style="float: left">
+          <!---->
+          <mat-list>
+         <mat-list-item>
+              
+         </mat-list-item>
+        </mat-list>
+          <!---->
+      </div>
+      <div style="float: right;padding-top: 13px;">
+       
+      </div>
+  </div>
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<div class="container">
+  <div class="container-fluid" style="margin-top: -4.0rem; margin-bottom: 2rem">
+    <mat-card
+      style="
+        box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+          0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+        border-radius: 16px;">
+    
+      <div id="customerDetails"  style="width: 100%">
+      <form  #userForm="ngForm"   (ngSubmit)="onClickSubmit(userForm.value)">
+        <mat-grid-list cols="1" rowHeight="60px">
+         <!-- <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Select Menu </mat-label>
+              <mat-select  name="menuId" ngModel>
+                <mat-option
+                  *ngFor="let framwork of listOfAllMenu"
+                  [value]="framwork.id">
+                  {{ framwork.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+-->
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Select Sub Menu </mat-label>
+              <mat-select  name="subServicesId" ngModel>
+                <mat-option
+                  *ngFor="let framwork of listOfAllSubMenu"
+                  [value]="framwork.id">
+                  {{ framwork.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Select Sub Menu Third Level </mat-label>
+              <mat-select  name="subServicesThirdlevelId" ngModel>
+                <mat-option
+                  *ngFor="let framwork of listOfAllSubMenuThrd"
+                  [value]="framwork.id">
+                  {{ framwork.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+        <div class="firstDesc">
+          <mat-form-field>
+            <mat-label>First Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="firstDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="secondDesc">
+          <mat-form-field>
+            <mat-label>Second Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="secondDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="thirdDesc">
+          <mat-form-field>
+            <mat-label>Third Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="thirdDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="fourthDesc">
+          <mat-form-field>
+            <mat-label>Forth Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="fourthDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="fifthDesc">
+          <mat-form-field>
+            <mat-label>Fifth Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="fifthDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="sixthDesc">
+          <mat-form-field>
+            <mat-label>Sixth Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="sixthDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <div class="seventhDesc">
+          <mat-form-field>
+            <mat-label>Seventh Description</mat-label>
+            <textarea matInput placeholder="Description" id="setCursorProperty" 
+              name="seventhDesc" ngModel>
+             </textarea>
+          </mat-form-field>
+        </div>
+        <input type="hidden"   name="id">
+        <div class="text-center mt-3" id="subButton">
+          <!-- <button mat-raised-button color="secondary">Primary</button> -->
+          <button mat-raised-button
+            style="font-size: 1rem;background-color: var(--danger) !important; color: #fff !important;"
+            class="btn btn-danger mx-3"> Submit</button>
+        </div>
+      </form>
+      </div>
+
+
+
+
+
+</mat-card>
+    
+<br />
+</div>
+</div>
